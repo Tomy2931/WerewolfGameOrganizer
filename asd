@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useRoutes, BrowserRouter } from 'react-router-dom'
-import Home from '../Home/'
+import Home from '../../Home/'
 import {WerewolfProvider} from '../Context/index'
 import './App.css'
 
