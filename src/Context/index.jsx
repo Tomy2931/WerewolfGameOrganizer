@@ -13,6 +13,10 @@ export const WerewolfProvider = ({children}) => {
       if (playersCount > 0)
       setPlayersCount(playersCount-1)}
 
+    const [villageCardsOn,setVillageCardsOn] = useState(false)
+    const clickInCard = () => {setVillageCardsOn(true)}
+
+
    
 
     return (
@@ -21,6 +25,9 @@ export const WerewolfProvider = ({children}) => {
           setPlayersCount,
           buttonPlayerAdd,
           buttonPlayerRem,
+          villageCardsOn,
+          setVillageCardsOn,
+          clickInCard,
     
         }}>
           {children}

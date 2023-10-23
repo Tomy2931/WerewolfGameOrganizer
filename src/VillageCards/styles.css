@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+.villageMenuCard{
+    background-image: url('../assets/VillageBackGround.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.VillageTittle{
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    
+}
+
+.CardsGrid{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 28% ); 
+    grid-template-rows: repeat(4, 30%); 
+    grid-gap: 20px;  
+    row-gap: 30px;
+
+    
+    overflow-y: auto; 
+    white-space: nowrap;
+    max-height: 88%; 
+    align-items: center;
+
+}
+.CardsGrid::-webkit-scrollbar{display: none;}
+.ImgCard{
+    width: 7rem;
+    height: 9rem;
+    flex-shrink: 0;
+}
+.ImgCardContainer:hover{
+    transform: scale(1.1);
+    
+}

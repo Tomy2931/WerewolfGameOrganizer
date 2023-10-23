@@ -1,12 +1,16 @@
 import { WerewolfContext } from '../Context';
 import './style.css'
 import React, { useContext } from 'react'
+import VillageCards from '../VillageCards/index'
+
+// import WerewolfsCards from '../WerewolfsCards/index'
 
 
 function Home() {
   let villagersArray = []
   let werewolfsArray = []
   const context = useContext(WerewolfContext)
+
   if (context.playersCount>=6 && context.playersCount <= 8){
     villagersArray = Array.from({ length: context.playersCount -1  });
     werewolfsArray = Array.from({ length: 1 });
@@ -47,7 +51,6 @@ function Home() {
             <button className={`bg-red-200 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Aceptar</button>
 
           </div>
-          
           <div className='cardSectionContainter w-[100%] h-[80%] flex flex-col items-center'>
 
             <div className=' w-[100%] h-[50%] flex flex-col bg-slate-300 items-center justify-center gap-1 mt-2'>
@@ -57,8 +60,10 @@ function Home() {
                
               <div className='cardSectionVillage'>
                 {villagersArray.map((_, index) => (
-                  <div key={index} className="cardContainer bg-blue-600"></div>))}
-               
+                  <div key={index} className="cardContainer bg-blue-600" onClick={()=>context.clickInCard()}></div>),
+
+                  )}
+                  {/* <img key={index} className='cardContainer' src="" alt="" /> */}
               </div>
               
             </div>
@@ -72,14 +77,16 @@ function Home() {
                 
                 <div className='cardSectionWerewolf'>
                   {werewolfsArray.map((_, index) => (
-                  <div key={index} className="cardContainer bg-red-600"></div>))}
-          
+                    <div key={index} className='cardContainer bg-red-600'></div>)
+                    )}
+                    {/* <img key={index} className='cardContainer' src="" alt="" /> */}
                 </div>
             </div>
 
           </div>
 
         </div>
+        <VillageCards/>
       </main>
          
     )
