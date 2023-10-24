@@ -13,16 +13,32 @@ export const WerewolfProvider = ({children}) => {
       if (playersCount > 0)
       setPlayersCount(playersCount-1)}
 
+    //Pestaña cartas de aldeanos
     const [villageCardsOn,setVillageCardsOn] = useState(false)
     const clickInCard = () => {setVillageCardsOn(true)}
     const clickSun = () => {setVillageCardsOn(false)}
 
+    //Pestaña cartas de lobos
     const [werewolfCardsOn,setWerewolfCardsOn] = useState(false)
     const clickInCardW = () => {setWerewolfCardsOn(true)}
     const clickMoon = () => {setWerewolfCardsOn(false)}
 
 
-   
+    //Actualizadores
+    const [cardImgInfoV, setCardImgInfoV] = useState([])
+    
+    const villageCardClicked = (img) => {
+      let updatedCardImgInfoV = [...cardImgInfoV, img]
+      setCardImgInfoV(updatedCardImgInfoV)
+    }
+    console.log(cardImgInfoV);
+
+    const [cardImgInfoW, setCardImgInfoW] = useState([])
+    
+    const werewolfCardClicked = (img) => {
+      let updatedCardImgInfoW = [...cardImgInfoW, img]
+      setCardImgInfoW(updatedCardImgInfoW)
+    }
 
     return (
         <WerewolfContext.Provider value={{
@@ -38,6 +54,13 @@ export const WerewolfProvider = ({children}) => {
           setWerewolfCardsOn,
           clickInCardW,
           clickMoon,
+          cardImgInfoV,
+          setCardImgInfoV,
+          villageCardClicked,
+          cardImgInfoW,
+          setCardImgInfoW,
+          werewolfCardClicked,
+
     
         }}>
           {children}

@@ -84,7 +84,16 @@ function VillageCards () {
                         <div className='CardsGrid mt-2'>
                     
                         {imagesVillager.map((image, index) => (
-                            <div key={index} className='ImgCardContainer relative'>
+                            <div key={index} className='ImgCardContainer relative' 
+                                onClick={()=> {
+                                    let imgInfo = [image[0],image[1]]
+                                    context.villageCardClicked(imgInfo)
+                                    context.clickSun()
+                                
+                                }
+
+                                }
+                            >
                                 <img className="ImgCard" src={image[0]} alt={`Image ${index}`} />
                                 <h2 className='ImgNum absolute top-1 left-2 text-white rounded-md font-bold'>{image[1]}</h2>
                             </div>

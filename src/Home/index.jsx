@@ -48,7 +48,7 @@ function Home() {
             <button className={`bg-red-200 w-10 rounded-md opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
             onClick={context.buttonPlayerAdd}>+</button>
 
-            <button className={`bg-red-200 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Aceptar</button>
+            <button className={`bg-red-200 absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Aceptar</button>
 
           </div>
           <div className='cardSectionContainter w-[100%] h-[80%] flex flex-col items-center'>
@@ -60,10 +60,15 @@ function Home() {
                
               <div className='cardSectionVillage'>
                 {villagersArray.map((_, index) => (
-                  <div key={index} className="cardContainer bg-blue-600" onClick={()=>context.clickInCard()}></div>),
+                  <img key={index} className="cardContainer bg-blue-600" 
 
+                  onClick={()=>{context.clickInCard()
+                  
+                  } }
+
+                  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>),
+                    
                   )}
-                  {/* <img key={index} className='cardContainer' src="" alt="" /> */}
               </div>
               
             </div>
@@ -77,9 +82,13 @@ function Home() {
                 
                 <div className='cardSectionWerewolf'>
                   {werewolfsArray.map((_, index1) => (
-                    <div key={index1} className='cardContainer bg-red-600' onClick={()=>context.clickInCardW()}></div>)
-                    )}
-                    {/* <img key={index} className='cardContainer' src="" alt="" /> */}
+                    <img key={index1} className='cardContainer bg-red-600' 
+
+                    onClick={()=>context.clickInCardW()}
+
+                    src={context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][0] : undefined}
+                    />
+                    ))}
                 </div>
             </div>
 

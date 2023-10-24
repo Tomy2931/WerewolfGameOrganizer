@@ -3,6 +3,8 @@
     background-image: url('../assets/backgroundW.png');
     background-size: auto;
     background-repeat: no-repeat;
+    background-position-y:20%;
+    background-position-x: 30%;
 }
 .WerewolfTittle{
     font-family: 'Nosifer', sans-serif;

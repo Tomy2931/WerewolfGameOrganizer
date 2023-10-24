@@ -52,7 +52,11 @@ function WerewolfsCards () {
                         <div className='CardsGrid mt-2 '>
                     
                         {imagesWerewolf.map((image, index) => (
-                            <div key={index} className='ImgCardContainer relative'>
+                            <div key={index} className='ImgCardContainer relative'
+                                onClick={()=> {
+                                    context.werewolfCardClicked([image[0],image[1]])
+                                    context.clickMoon()
+                                }}>
                                 <img className="ImgCard2" src={image[0]} alt={`Image ${index}`} />
                                 <h2 className='ImgNum absolute top-1 left-2 text-white rounded-md font-bold'>{image[1]}</h2>
                             </div>
