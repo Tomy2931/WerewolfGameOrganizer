@@ -2,8 +2,8 @@ import { WerewolfContext } from '../Context';
 import './style.css'
 import React, { useContext } from 'react'
 import VillageCards from '../VillageCards/index'
+import WerewolfsCards from '../WerewolfsCards';
 
-// import WerewolfsCards from '../WerewolfsCards/index'
 
 
 function Home() {
@@ -76,8 +76,8 @@ function Home() {
             <h2>0 Points</h2>    
                 
                 <div className='cardSectionWerewolf'>
-                  {werewolfsArray.map((_, index) => (
-                    <div key={index} className='cardContainer bg-red-600'></div>)
+                  {werewolfsArray.map((_, index1) => (
+                    <div key={index1} className='cardContainer bg-red-600' onClick={()=>context.clickInCardW()}></div>)
                     )}
                     {/* <img key={index} className='cardContainer' src="" alt="" /> */}
                 </div>
@@ -87,6 +87,7 @@ function Home() {
 
         </div>
         <VillageCards/>
+        <WerewolfsCards/>
       </main>
          
     )

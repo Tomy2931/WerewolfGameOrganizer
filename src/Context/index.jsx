@@ -15,6 +15,11 @@ export const WerewolfProvider = ({children}) => {
 
     const [villageCardsOn,setVillageCardsOn] = useState(false)
     const clickInCard = () => {setVillageCardsOn(true)}
+    const clickSun = () => {setVillageCardsOn(false)}
+
+    const [werewolfCardsOn,setWerewolfCardsOn] = useState(false)
+    const clickInCardW = () => {setWerewolfCardsOn(true)}
+    const clickMoon = () => {setWerewolfCardsOn(false)}
 
 
    
@@ -28,6 +33,11 @@ export const WerewolfProvider = ({children}) => {
           villageCardsOn,
           setVillageCardsOn,
           clickInCard,
+          clickSun,
+          werewolfCardsOn,
+          setWerewolfCardsOn,
+          clickInCardW,
+          clickMoon,
     
         }}>
           {children}
