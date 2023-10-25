@@ -35,32 +35,35 @@ function Home() {
     <main className='hola'>
         <div className='principalInterface '>
 
-            <h1 className='text-red-600 text-4xl absolute top-0 '>Ultimate Werewolf</h1>
+            <h1 className='MainTittle text-red-700 text-5xl absolute top-1 under '>Ultimate Werewolf</h1>
         
-            <div className='userInput w-[100%] h-[7%] flex '>
+            <div className='userInput w-[100%] h-[7%] mt-10 flex '>
 
-            <p className='text-yellow-300 text-3xl '>Players: </p>
+            <p className='text-orange-500 text-3xl '>Players: </p>
             
 
-            <button className= {`bg-red-200 w-10 rounded-md opacityButtonOn ${(context.playersCount >0 ?  'opacityButtonOn' : 'opacityButtonOff')}`}
+            <button className= {` plusLessButtons opacityButtonOn ${(context.playersCount >0 ?  'opacityButtonOn' : 'opacityButtonOff')}`}
             onClick={context.buttonPlayerRem}>-</button>
-            <h2 className='text-yellow-300 text-3xl '>{context.playersCount}</h2>
-            <button className={`bg-red-200 w-10 rounded-md opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
+            <h2 className='text-orange-500 text-3xl '>{context.playersCount}</h2>
+            <button className={` plusLessButtons opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
             onClick={context.buttonPlayerAdd}>+</button>
 
-            <button className={`bg-red-200 absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Aceptar</button>
+            <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button>
 
           </div>
+
+          {/* Cards  */}
+
           <div className='cardSectionContainter w-[100%] h-[80%] flex flex-col items-center'>
 
-            <div className=' w-[100%] h-[50%] flex flex-col bg-slate-300 items-center justify-center gap-1 mt-2'>
+            <div className='villageBackground w-[100%] h-[50%] flex flex-col items-center justify-center gap-1 mt-2 relative'>
                 {/* VILLAGE SIDE */}
-              <h2>{villagersArray.length} Villagers</h2>
-              <h2>{context.cardPointInfoV } Points</h2>     
+              <h2 className={`countInfoTextV  absolute top-1 left-1 ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{villagersArray.length} Villagers</h2>
+              <h2 className={`countInfoTextV  absolute top-0 right-1  text-4xl ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{context.cardPointInfoV }</h2>     
                
-              <div className='cardSectionVillage'>
+              <div className='cardSectionVillage mt-10'>
                 {villagersArray.map((_, index) => (
-                  <div className="cardContainer bg-blue-600 relative"  key={index}
+                  <div className="cardContainer cardBackV relative"  key={index}
                       onClick={()=>{
                         if (villagersArray.length > (context.cardImgInfoV.length ) ) {
                           
@@ -74,7 +77,7 @@ function Home() {
                         }
 
                       }}>
-                      <img className='w-full h-full'  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>
+                      <img className='w-full h-full imagen'  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>
                       <h2 className='absolute top-0 left-2 text-white font-bold'
                       >{context.cardImgInfoV[index] ? context.cardImgInfoV[index][1] : undefined}  </h2>
                   </div>
@@ -82,18 +85,18 @@ function Home() {
               </div>
               
             </div>
+            <h2  className={` textPointDifference text-white mt-2 mb-1 ${context.cardPointInfoV + context.cardPointInfoW > 0 ? 'text-blue-500' : 'negative'} ${context.cardPointInfoV + context.cardPointInfoW < 0 ? 'text-red-500' : 'negative'}`}>
+              {(context.cardPointInfoV && context.cardPointInfoW) ?  context.cardPointInfoV + context.cardPointInfoW : 0} Points Difference</h2>
 
-            <h2 className='text-white mt-1 mb-1'>{(context.cardPointInfoV && context.cardPointInfoW) ? context.cardPointInfoV + context.cardPointInfoW : 0} Points Difference</h2>
-
-            <div className=' w-[100%] h-[50%] flex flex-col bg-blue-300 items-center justify-center gap-1 mt-2'>
+            <div className='werewolfBackground w-[100%] h-[50%] flex flex-col items-center justify-center gap-1 mt-2 relative'>
 
               {/* WEREWOLF SIDE */}
-            <h2>{werewolfsArray.length} Werewolf/s</h2>    
-            <h2> {context.cardPointInfoW} Points </h2>    
+            <h2 className={`countInfoTextW absolute top-1 left-1 ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{werewolfsArray.length} Werewolf/s</h2>    
+            <h2 className={`countInfoTextW absolute top-1 right-1  text-4xl ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} > {context.cardPointInfoW}  </h2>    
                 <div className='cardSectionWerewolf'>
                   {werewolfsArray.map((_, index1) => (
       
-                    <div className="cardContainer bg-red-600 relative"  key={index1}
+                    <div className="cardContainer cardBackW  relative mt-10"  key={index1}
                       onClick={()=>{
                         if (werewolfsArray.length > (context.cardImgInfoW.length ) ) {
                           
