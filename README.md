@@ -1,8 +1,7 @@
-# React + Vite
+# WereWolf Game Organizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The idea for this project came from a card game I have. The setup of this game consists of villagers and wolves, which depends on the number of players. The characters also have points to balance the teams. I managed to automate all this, instead of doing everything mentally, to make it more practical.
 
-Currently, two official plugins are available:
+To clarify, it is not a game, it is just a system for organizing a physical card game.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
