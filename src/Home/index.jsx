@@ -6,6 +6,7 @@ import WerewolfsCards from '../WerewolfsCards';
 
 
 
+
 function Home() {
   let villagersArray = []
   let werewolfsArray = []
@@ -27,7 +28,6 @@ function Home() {
     villagersArray = Array.from({ length: context.playersCount -4  });
     werewolfsArray = Array.from({ length: 4});
   }
-
 
 
     return (
@@ -54,40 +54,63 @@ function Home() {
           <div className='cardSectionContainter w-[100%] h-[80%] flex flex-col items-center'>
 
             <div className=' w-[100%] h-[50%] flex flex-col bg-slate-300 items-center justify-center gap-1 mt-2'>
-
+                {/* VILLAGE SIDE */}
               <h2>{villagersArray.length} Villagers</h2>
-              <h2>0 Points</h2>     
+              <h2>{context.cardPointInfoV } Points</h2>     
                
               <div className='cardSectionVillage'>
                 {villagersArray.map((_, index) => (
-                  <img key={index} className="cardContainer bg-blue-600" 
+                  <div className="cardContainer bg-blue-600 relative"  key={index}
+                      onClick={()=>{
+                        if (villagersArray.length > (context.cardImgInfoV.length ) ) {
+                          
+                          context.clickInCard()
+                        } else {
+                         context.eliminatedImgV(context.cardImgInfoV[index][1])
+                         context.cardImgInfoV.splice(index,1)
 
-                  onClick={()=>{context.clickInCard()
-                  
-                  } }
+                         context.clickInCard()
+                         
+                        }
 
-                  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>),
-                    
-                  )}
+                      }}>
+                      <img className='w-full h-full'  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>
+                      <h2 className='absolute top-0 left-2 text-white font-bold'
+                      >{context.cardImgInfoV[index] ? context.cardImgInfoV[index][1] : undefined}  </h2>
+                  </div>
+                      ))}
               </div>
               
             </div>
 
-            <h2 className='text-white mt-1 mb-1'>0 Difference</h2>
+            <h2 className='text-white mt-1 mb-1'>{(context.cardPointInfoV && context.cardPointInfoW) ? context.cardPointInfoV + context.cardPointInfoW : 0} Points Difference</h2>
 
             <div className=' w-[100%] h-[50%] flex flex-col bg-blue-300 items-center justify-center gap-1 mt-2'>
 
+              {/* WEREWOLF SIDE */}
             <h2>{werewolfsArray.length} Werewolf/s</h2>    
-            <h2>0 Points</h2>    
-                
+            <h2> {context.cardPointInfoW} Points </h2>    
                 <div className='cardSectionWerewolf'>
                   {werewolfsArray.map((_, index1) => (
-                    <img key={index1} className='cardContainer bg-red-600' 
+      
+                    <div className="cardContainer bg-red-600 relative"  key={index1}
+                      onClick={()=>{
+                        if (werewolfsArray.length > (context.cardImgInfoW.length ) ) {
+                          
+                          context.clickInCardW()
+                        } else {
+                         context.eliminatedImgW(context.cardImgInfoW[index1][1])
+                         context.cardImgInfoW.splice(index1,1)
 
-                    onClick={()=>context.clickInCardW()}
-
-                    src={context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][0] : undefined}
-                    />
+                         context.clickInCardW()
+                         
+                        }
+                      }}>
+                      <img className='w-full h-full'  src={context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][0] : undefined} ></img>
+                      <h2 className='absolute top-0 left-2 text-white font-bold'
+                      >{context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][1] : undefined}  </h2>
+                  </div>
+                    
                     ))}
                 </div>
             </div>

@@ -24,21 +24,34 @@ export const WerewolfProvider = ({children}) => {
     const clickMoon = () => {setWerewolfCardsOn(false)}
 
 
-    //Actualizadores
+    //Actualizadores V
     const [cardImgInfoV, setCardImgInfoV] = useState([])
+    const [cardPointInfoV, setCardPointInfoV] = useState(0)
     
     const villageCardClicked = (img) => {
       let updatedCardImgInfoV = [...cardImgInfoV, img]
-      setCardImgInfoV(updatedCardImgInfoV)
-    }
-    console.log(cardImgInfoV);
 
+      let updatedCardPointInfoV = cardPointInfoV + img[1]
+
+      setCardImgInfoV(updatedCardImgInfoV)
+      setCardPointInfoV(updatedCardPointInfoV)
+    }
+    const eliminatedImgV = (num) => {setCardPointInfoV(cardPointInfoV-num)}
+    
+    //Actualizadores W
     const [cardImgInfoW, setCardImgInfoW] = useState([])
+    const [cardPointInfoW, setCardPointInfoW] = useState(0)
     
     const werewolfCardClicked = (img) => {
       let updatedCardImgInfoW = [...cardImgInfoW, img]
+      let updatedCardPointInfoW = cardPointInfoW + img[1]
+
+      setCardPointInfoW(updatedCardPointInfoW)
       setCardImgInfoW(updatedCardImgInfoW)
     }
+    const eliminatedImgW = (num) => {setCardPointInfoW(cardPointInfoW-num)}
+
+  
 
     return (
         <WerewolfContext.Provider value={{
@@ -56,10 +69,17 @@ export const WerewolfProvider = ({children}) => {
           clickMoon,
           cardImgInfoV,
           setCardImgInfoV,
+          cardPointInfoV,
+          setCardPointInfoV,
+          eliminatedImgV,
           villageCardClicked,
           cardImgInfoW,
           setCardImgInfoW,
           werewolfCardClicked,
+          eliminatedImgW,
+          cardPointInfoW,
+          setCardPointInfoW,
+          
 
     
         }}>

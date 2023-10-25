@@ -28,7 +28,7 @@ import Tanner from '../assets/Tanner.png'
 import ToughGuy from '../assets/Tough-guy.png'
 import Troublemaker from '../assets/Troublemaker.png'
 import VillageIdiot from '../assets/Village-idiot.png'
-import Villager from '../assets/Pacifist.png'
+import Villager from '../assets/Villager.png'
 import VirginiaWolf from '../assets/Virginia Wolfs.png'
 import Witch from '../assets/Witch.png'
 
@@ -36,7 +36,8 @@ import './styles.css'
 import { WerewolfContext } from '../Context';
 import React, { useContext } from 'react'
 
-let imagesVillager = [[AprenticeSeer,4],
+let imagesVillager = [
+    [AprenticeSeer,4],
     [AuraSeer,3],
     [Bodyguard,3],
     [Creeper,-2],
@@ -57,7 +58,7 @@ let imagesVillager = [[AprenticeSeer,4],
     [Prince,3],
     [Revealer,4],
     [Seer,7],
-    [Skeleton,-3],
+    [Skeleton,3],
     [Snitch,4],
     [Speelcaster,1],
     [ToughGuy,3],
@@ -79,17 +80,17 @@ function VillageCards () {
                     <header className='bg-white w-full h-[9%] flex justify-center opacity-[0.8]  '>
                         <h1 className='VillageTittle absolute left-2 top-1 '>👨🏻‍🌾</h1>
                         <h1 className='VillageTittle underline'>Village </h1>
-                        <h1 className='VillageTittle absolute right-2 top-1 ' onClick={()=>context.clickSun()}>☀️</h1>
+                        <h1 className='VillageTittle absolute right-2 top-1 '>☀️</h1>
                     </header>
                         <div className='CardsGrid mt-2'>
                     
                         {imagesVillager.map((image, index) => (
                             <div key={index} className='ImgCardContainer relative' 
                                 onClick={()=> {
-                                    let imgInfo = [image[0],image[1]]
-                                    context.villageCardClicked(imgInfo)
+                                    
+                                    context.villageCardClicked(imagesVillager[index])
                                     context.clickSun()
-                                
+                                    
                                 }
 
                                 }

@@ -47,7 +47,7 @@ function WerewolfsCards () {
                     <header className='bg-black w-full h-[9%] flex  opacity-[0.8] items-center justify-around rounded-lg'>
                         <h1 className='WerewolfTittle mt-1'>🐾</h1>
                         <h1 className='WerewolfTittle mt-1'>Werewolfs </h1>
-                        <h1 className='WerewolfTittle mt-1 ' onClick={()=>context.clickMoon()}>🌙</h1>
+                        <h1 className='WerewolfTittle mt-1 '>🌙</h1>
                     </header>
                         <div className='CardsGrid mt-2 '>
                     
