@@ -169,12 +169,16 @@ body{
         background-size: contain;
     }
     .cardSectionVillage,.cardSectionWerewolf{
+        
+        width: 100%;
         height: 80%;
-        gap: 30px;
-        max-width: 95%;
+        gap: 50px;
+        max-width: 200%;
+        margin-left: 7%;
+        justify-content: center;
     }
     .cardBackV,.cardBackW{
-        transform: scale(1.2);
+        transform: scale(1.5);
     }
   }
   
