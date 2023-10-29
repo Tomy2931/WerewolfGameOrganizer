@@ -37,7 +37,7 @@ function Home() {
 
             <h1 className='MainTittle text-red-700 text-5xl absolute top-1 under '>Ultimate Werewolf</h1>
         
-            <div className='userInput w-[100%] h-[7%] mt-10 flex '>
+            <div className='userInput w-full h-7 mt-10 flex '>
 
             <p className='text-orange-500 text-3xl '>Players: </p>
             
@@ -48,15 +48,15 @@ function Home() {
             <button className={` plusLessButtons opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
             onClick={context.buttonPlayerAdd}>+</button>
 
-            <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button>
+            {/* <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button> */}
 
           </div>
 
           {/* Cards  */}
 
-          <div className='cardSectionContainter w-[100%] h-[80%] flex flex-col items-center'>
+          <div className='cardSectionContainter w-full h-4/5 flex flex-col items-center'>
 
-            <div className='villageBackground w-[100%] h-[50%] flex flex-col items-center justify-center gap-1 mt-2 relative'>
+            <div className='villageBackground w-full h-2/4 flex flex-col items-center justify-center gap-1 mt-2 relative'>
                 {/* VILLAGE SIDE */}
               <h2 className={`countInfoTextV  absolute top-1 left-1 ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{villagersArray.length} Villagers</h2>
               <h2 className={`countInfoTextV  absolute top-0 right-1  text-4xl ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{context.cardPointInfoV }</h2>     
@@ -88,7 +88,7 @@ function Home() {
             <h2  className={` textPointDifference text-white mt-2 mb-1 ${context.cardPointInfoV + context.cardPointInfoW > 0 ? 'text-blue-500' : 'negative'} ${context.cardPointInfoV + context.cardPointInfoW < 0 ? 'text-red-500' : 'negative'}`}>
               {(context.cardPointInfoV && context.cardPointInfoW) ?  context.cardPointInfoV + context.cardPointInfoW : 0} Points Difference</h2>
 
-            <div className='werewolfBackground w-[100%] h-[50%] flex flex-col items-center justify-center gap-1 mt-2 relative'>
+            <div className='werewolfBackground w-full h-2/4 flex flex-col items-center justify-center gap-1 mt-2 relative'>
 
               {/* WEREWOLF SIDE */}
             <h2 className={`countInfoTextW absolute top-1 left-1 ${(context.playersCount >5 ?  'displayOn' : 'displayOff')}`} >{werewolfsArray.length} Werewolf/s</h2>    
@@ -96,7 +96,7 @@ function Home() {
                 <div className='cardSectionWerewolf'>
                   {werewolfsArray.map((_, index1) => (
       
-                    <div className="cardContainer cardBackW  relative mt-10"  key={index1}
+                    <div className="cardContainer cardBackW  relative mt-10 "  key={index1}
                       onClick={()=>{
                         if (werewolfsArray.length > (context.cardImgInfoW.length ) ) {
                           
