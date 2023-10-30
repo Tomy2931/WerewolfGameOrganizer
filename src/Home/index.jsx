@@ -37,20 +37,22 @@ function Home() {
 
             <h1 className='MainTittle text-red-700 text-5xl absolute top-1 under '>Ultimate Werewolf</h1>
         
-            <div className='userInput w-full h-7 mt-10 flex '>
+            <div className='userInput w-full h-7 mt-10 flex    '>
 
-            <p className='text-orange-500 text-3xl '>Players: </p>
+            <p className='playerText text-orange-500 text-3xl '>Players: </p>
             
+            <div className='flex items-center justify-between'>
 
-            <button className= {` plusLessButtons opacityButtonOn ${(context.playersCount >0 ?  'opacityButtonOn' : 'opacityButtonOff')}`}
-            onClick={context.buttonPlayerRem}>-</button>
-            <h2 className='text-orange-500 text-3xl '>{context.playersCount}</h2>
-            <button className={` plusLessButtons opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
-            onClick={context.buttonPlayerAdd}>+</button>
+              <button className= {` plusLessButtons opacityButtonOn ${(context.playersCount >0 ?  'opacityButtonOn' : 'opacityButtonOff')}`}
+              onClick={context.buttonPlayerRem}>-</button>
+              <h2 className='text-orange-500 text-3xl ml-4 '>{context.playersCount}</h2>
+              <button className={` plusLessButtons opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
+              onClick={context.buttonPlayerAdd}>+</button>
+            </div>
 
-            {/* <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button> */}
+              {/* <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button> */}
 
-          </div>
+            </div>
 
           {/* Cards  */}
 
@@ -85,7 +87,9 @@ function Home() {
               </div>
               
             </div>
-            <h2  className={` textPointDifference text-white mt-2 mb-1 ${context.cardPointInfoV + context.cardPointInfoW > 0 ? 'text-blue-500' : 'negative'} ${context.cardPointInfoV + context.cardPointInfoW < 0 ? 'text-red-500' : 'negative'}`}>
+            <h2 className={`textPointDifference mt-2 mb-1 
+            ${context.cardPointInfoV + context.cardPointInfoW > 0 ? 'text-blue-500' : ''} 
+            ${context.cardPointInfoV + context.cardPointInfoW < 0 ? 'text-red-500' : ''}`}>
               {(context.cardPointInfoV && context.cardPointInfoW) ?  context.cardPointInfoV + context.cardPointInfoW : 0} Points Difference</h2>
 
             <div className='werewolfBackground w-full h-2/4 flex flex-col items-center justify-center gap-1 mt-2 relative'>

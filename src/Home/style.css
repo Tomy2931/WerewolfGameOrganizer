@@ -107,10 +107,9 @@ body{
     height: 9rem; 
     margin-right: 10px;
     flex-shrink: 0;
-   
-  }
-  
-  .cardBackV{
+}
+
+.cardBackV{
     background-image: url('../assets/dorsoCardV.png');
     background-size: 180%;
     background-repeat: no-repeat;
@@ -139,46 +138,75 @@ body{
 .displayOn{display: block;}
 .displayOff{display: none;}
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
     
     .MainTittle.text-red-700.text-5xl.absolute.top-1.under{ 
         font-size: 5rem;
+        margin-top: 30px;
     }
     .text-orange-500.text-3xl{
         color: rgb(255, 166, 0);
-        font-size: 3rem;
+        font-size: 2rem;
     }
     .userInput.w-full.h-7.mt-10.flex {
-        position: absolute;
-        margin-right: 65%;
-        top: 0;
-        margin-top: 2%;
+        top: 0;margin-top: 2%;
         justify-content: center;
-
+    }
+    .playerText.text-orange-500.text-3xl{
+        position: absolute;
+        top: 4%;
+        left: 3%;
+        font-size: 3rem;
+    }
+    .flex.items-center.justify-between{
+        position: absolute;
+        font-size: 3rem;
+        left: 3.5%;
+        top: 7%;
     }
     /* .readyButton.absolute.right-2{
         top: 0;
         right: -10%;
     } */
+
+    /* Cartas general */
     .cardSectionContainter.w-full{
-        height: 90%;
-        margin-top: 5%;
+        height: 100%;
+        margin-top: 2%;
         width: 100%;
+        flex-direction: row;
     }
     .villageBackground.w-full,.werewolfBackground.w-full{
-        background-size: contain;
+        background-size: cover;
+        height: 80vh;
+        background-repeat: no-repeat;
+        width: 100vw;
     }
+   
     .cardSectionVillage,.cardSectionWerewolf{
-        
-        width: 100%;
-        height: 80%;
+        width: 700px;
+        height: 100%;
         gap: 50px;
-        max-width: 200%;
-        margin-left: 7%;
-        justify-content: center;
     }
-    .cardBackV,.cardBackW{
-        transform: scale(1.5);
+    .cardBackV{
+        background-size: 180% 131%;
+        height: 60%;
+        width: 40%;
     }
+    .cardBackW{
+        background-size: 180% 130%;
+        height: 60%;
+        width: 40%;
+    }
+    .textPointDifference.mt-2.mb-1{
+        width: 25%; 
+        border: none;
+        font-size: 1.6rem;
+
+
+
+    }
+    /* .cardSectionVillage::-webkit-scrollbar,.cardSectionWerewolf::-webkit-scrollbar {
+        width: 10px;  
+      } */
   }
-  
