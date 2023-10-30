@@ -10,12 +10,12 @@
     
 }
 
-.CardsGrid{
+.CardsGridV{
     width: 100%;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 28% ); 
-    grid-template-rows: repeat(4, 30%); 
+    grid-template-rows: repeat(11, 30%); 
     grid-gap: 20px;  
     row-gap: 30px;
 
@@ -26,7 +26,7 @@
     align-items: center;
 
 }
-.CardsGrid::-webkit-scrollbar{display: none;}
+.CardsGridV::-webkit-scrollbar{display: none;}
 .ImgCard{
     width: 7rem;
     height: 9rem;
@@ -34,5 +34,26 @@
 }
 .ImgCardContainer:hover{
     transform: scale(1.1);
+    
+}
+@media screen and (min-width: 1440px) {
+
+    .villageMenuCard.border-4.bg-orange-300.relative.rounded-lg{
+        width: 40%;
+        height: 80%;
+    }
+   
+    .ImgCardContainer.relative{
+        width: 100px;
+        height: 100px;
+    }
+    .CardsGridV{
+        margin-left: 5%;
+        width: 100%;
+        grid-gap: 1px;  
+        row-gap: 31px;
+
+        max-height: 85%; 
+    }
     
 }

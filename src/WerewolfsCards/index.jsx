@@ -41,15 +41,15 @@ let imagesWerewolf = [
 function WerewolfsCards () {
     const context = useContext(WerewolfContext)
     return(
-        <main className={`w-[100%] h-[100%] absolute top-0 ${(context.werewolfCardsOn == true ?  'displayOn' : 'displayOff')}`}>
-            <div className='w-[100%] h-[100%] flex justify-center items-center'>
-                <div className='WerewolfMenuCard w-[90%] h-[90%] border-[5px] border-gray-800  bg-orange-300 relative rounded-lg'>
+        <main className={`w-full h-full absolute top-0 ${(context.werewolfCardsOn == true ?  'displayOn' : 'displayOff')}`}>
+            <div className='w-full h-full flex justify-center items-center'>
+                <div className='WerewolfMenuCard w-5/6 h-5/6 border-4 border-gray-800  bg-orange-300 relative rounded-lg'>
                     <header className='bg-black w-full h-[9%] flex  opacity-[0.8] items-center justify-around rounded-lg'>
                         <h1 className='WerewolfTittle mt-1'>🐾</h1>
                         <h1 className='WerewolfTittle mt-1'>Werewolfs </h1>
                         <h1 className='WerewolfTittle mt-1 '>🌙</h1>
                     </header>
-                        <div className='CardsGrid mt-2 '>
+                        <div className='CardsGridW mt-2 '>
                     
                         {imagesWerewolf.map((image, index) => (
                             <div key={index} className='ImgCardContainer relative'

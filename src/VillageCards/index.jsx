@@ -76,13 +76,13 @@ function VillageCards () {
     return(
         <main className={`w-[100%] h-[100%] absolute top-0 ${(context.villageCardsOn == true ?  'displayOn' : 'displayOff')}`}>
             <div className='w-[100%] h-[100%] flex justify-center items-center'>
-                <div className='villageMenuCard w-[90%] h-[90%] border-[5px] bg-orange-300 relative rounded-lg'>
+                <div className='villageMenuCard w-6/7 h-4/5 border-4 bg-orange-300 relative rounded-lg'>
                     <header className='bg-white w-full h-[9%] flex justify-center opacity-[0.8]  '>
                         <h1 className='VillageTittle absolute left-2 top-1 '>👨🏻‍🌾</h1>
                         <h1 className='VillageTittle underline'>Village </h1>
                         <h1 className='VillageTittle absolute right-2 top-1 '>☀️</h1>
                     </header>
-                        <div className='CardsGrid mt-2'>
+                        <div className='CardsGridV mt-2'>
                     
                         {imagesVillager.map((image, index) => (
                             <div key={index} className='ImgCardContainer relative' 
@@ -103,7 +103,7 @@ function VillageCards () {
                         </div>
 
                 </div>
-
+                               
             </div>
         </main>
     )

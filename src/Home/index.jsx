@@ -80,7 +80,7 @@ function Home() {
 
                       }}>
                       <img className='w-full h-full imagen'  src={context.cardImgInfoV[index] ? context.cardImgInfoV[index][0] : undefined} ></img>
-                      <h2 className='absolute top-0 left-2 text-white font-bold'
+                      <h2 className='absolute top-0 left-2 text-white font-bold pointCard '
                       >{context.cardImgInfoV[index] ? context.cardImgInfoV[index][1] : undefined}  </h2>
                   </div>
                       ))}
@@ -114,7 +114,7 @@ function Home() {
                         }
                       }}>
                       <img className='w-full h-full'  src={context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][0] : undefined} ></img>
-                      <h2 className='absolute top-0 left-2 text-white font-bold'
+                      <h2 className='absolute top-0 left-2 text-white font-bold pointCard'
                       >{context.cardImgInfoW[index1] ? context.cardImgInfoW[index1][1] : undefined}  </h2>
                   </div>
                     

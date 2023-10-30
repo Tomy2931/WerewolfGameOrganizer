@@ -13,7 +13,7 @@
     
 }
 
-.CardsGrid{
+.CardsGridW{
     width: 100%;
     display: grid;
     justify-content: center;
@@ -29,7 +29,7 @@
     align-items: center;
 
 }
-.CardsGrid::-webkit-scrollbar{display: none;}
+.CardsGridW::-webkit-scrollbar{display: none;}
 .ImgCard2{
     width: 7rem;
     height: 9rem;
@@ -38,4 +38,26 @@
 .ImgCardContainer:hover{
     transform: scale(1.1);
     
+}
+
+@media screen and (min-width: 1440px) {
+
+    .WerewolfMenuCard.border-4.border-gray-800.bg-orange-300.relative.rounded-lg{
+        width: 40%;
+        height: 80%;
+    }
+    .CardsGridW.mt-2{
+        margin-left: 5%;
+        width: 100%;
+        grid-gap: 1px;  
+        row-gap: 31px;
+        grid-template-columns: repeat(3, 28% ); 
+        grid-template-rows: repeat(5, 30%); 
+
+        max-height: 85%; 
+    }
+    .ImgCardContainer.relative{
+        width: 400px;
+        height: 100px;
+    }
 }

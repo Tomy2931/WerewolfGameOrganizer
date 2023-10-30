@@ -131,6 +131,7 @@ body{
     text-align: center;
     border: 2px solid white;
     border-radius: 10px;   
+    color: white;
   }
 .opacityButtonOn{opacity: 1;}
 .opacityButtonOff{opacity: 0;}
@@ -198,13 +199,25 @@ body{
         height: 60%;
         width: 40%;
     }
+    .w-full.h-full.imagen{
+        height: 103%;
+    }
     .textPointDifference.mt-2.mb-1{
         width: 25%; 
         border: none;
         font-size: 1.6rem;
-
-
-
+    }
+    .absolute.top-0.left-2.text-white.font-bold.pointCard{
+        font-size: 2.5rem;
+    }
+    .countInfoTextW.absolute.top-1.right-1.text-4xl,.countInfoTextV.absolute.top-0.right-1.text-4xl{
+        font-size: 4.5rem;
+        margin-top: 20px;
+        margin-right: 16px;
+    }
+    .countInfoTextW.absolute.top-1.left-1,.countInfoTextV.absolute.top-1.left-1{
+        font-size: 3rem;
+        margin-left: 10px;
     }
     /* .cardSectionVillage::-webkit-scrollbar,.cardSectionWerewolf::-webkit-scrollbar {
         width: 10px;  
