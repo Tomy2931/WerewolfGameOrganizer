@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
 .WerewolfMenuCard{
-    background-image: url('../assets/backgroundW.png');
+    background-image: url('../../assets/backgroundW.png');
     background-size: auto;
     background-repeat: no-repeat;
     background-position-y:20%;
@@ -17,7 +17,7 @@
     width: 100%;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(3, 28% ); 
+    grid-template-columns: repeat(3, 29% ); 
     grid-template-rows: repeat(4, 30%); 
     grid-gap: 20px;  
     row-gap: 30px;

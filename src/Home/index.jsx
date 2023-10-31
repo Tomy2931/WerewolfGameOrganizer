@@ -1,10 +1,9 @@
 import { WerewolfContext } from '../Context';
 import './style.css'
 import React, { useContext } from 'react'
-import VillageCards from '../VillageCards/index'
-import WerewolfsCards from '../WerewolfsCards';
-
-
+import VillageCards from './VillageCards/index'
+import WerewolfsCards from './WerewolfsCards/index';
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -41,7 +40,7 @@ function Home() {
 
             <p className='playerText text-orange-500 text-3xl '>Players: </p>
             
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between mr-7'>
 
               <button className= {` plusLessButtons opacityButtonOn ${(context.playersCount >0 ?  'opacityButtonOn' : 'opacityButtonOff')}`}
               onClick={context.buttonPlayerRem}>-</button>
@@ -49,9 +48,14 @@ function Home() {
               <button className={` plusLessButtons opacityButtonOn ${(context.playersCount == 20 ?  'opacityButtonOff' : 'opacityButtonOn')}`}
               onClick={context.buttonPlayerAdd}>+</button>
             </div>
+            <Link to="/gameNames">
+                <button className={`readyButton absolute right-2 top-[8%] 
+                ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}
+                ${(werewolfsArray.length == context.cardImgInfoW.length ?  'displayOn' : 'displayOff')}
+                ${(villagersArray.length == context.cardImgInfoV.length ?  'displayOn' : 'displayOff')}
 
-              {/* <button className={` readyButton absolute right-2 ${(context.playersCount >= 6 ?  'displayOn' : 'displayOff')}`}>Ready</button> */}
-
+                `}>Ready</button>
+            </Link>
             </div>
 
           {/* Cards  */}
@@ -127,6 +131,7 @@ function Home() {
         </div>
         <VillageCards/>
         <WerewolfsCards/>
+        
       </main>
          
     )

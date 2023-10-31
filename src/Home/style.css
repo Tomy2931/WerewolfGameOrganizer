@@ -107,6 +107,8 @@ body{
     height: 9rem; 
     margin-right: 10px;
     flex-shrink: 0;
+    animation: cardAnimation 1s ease-in;
+    
 }
 
 .cardBackV{
@@ -133,11 +135,27 @@ body{
     border-radius: 10px;   
     color: white;
   }
+
+  .countInfoTextW,.countInfoTextV{animation: cardAnimation 1s ease-in;}
 .opacityButtonOn{opacity: 1;}
 .opacityButtonOff{opacity: 0;}
 
 .displayOn{display: block;}
 .displayOff{display: none;}
+
+
+
+@keyframes cardAnimation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
 
 @media screen and (min-width: 1440px) {
     
@@ -219,6 +237,8 @@ body{
         font-size: 3rem;
         margin-left: 10px;
     }
+   
+
     /* .cardSectionVillage::-webkit-scrollbar,.cardSectionWerewolf::-webkit-scrollbar {
         width: 10px;  
       } */
