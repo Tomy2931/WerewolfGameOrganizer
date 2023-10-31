@@ -51,6 +51,8 @@ export const WerewolfProvider = ({children}) => {
     }
     const eliminatedImgW = (num) => {setCardPointInfoW(cardPointInfoW-num)}
 
+    //GameNames
+
   
 
     return (
