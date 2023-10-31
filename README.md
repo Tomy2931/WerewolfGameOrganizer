@@ -14,4 +14,6 @@ Game: https://tiendamia.com/ar/producto?amz=B00MHWUJA0
 
 -Click in the village cards to select characters, and the same with the werewolves
 
--In the middle there is a points comparator, that will indicate how many points difference there is between the two teams (Red for wolves, blue for villagers)
+-In the middle there is a points comparator, that will indicate how many points difference there is between the two teams (Red for wolves, blue for villagers), and you can change the cards to balance the teams clicking in a card with a character already selected.
+
+-Press the Ready Button
