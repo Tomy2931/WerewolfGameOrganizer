@@ -4,7 +4,14 @@ The idea for this project came from a card game I have. The setup of this game c
 
 To clarify, it is not a game, it is just a system for organizing a physical card game.
 
-Game: https://tiendamia.com/ar/producto?amz=B00MHWUJA0
+# Link:
+
+https://tomy2931.github.io/WerewolfGameOrganizer/
+
+# Game: 
+
+https://tiendamia.com/ar/producto?amz=B00MHWUJA0
+
 
 # How To Use
 
