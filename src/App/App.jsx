@@ -1,8 +1,10 @@
-import { useRoutes, HashRouter } from 'react-router-dom'; // Importa HashRouter
+import { useRoutes, HashRouter } from 'react-router-dom';
 import Home from '../Home/';
 import GameNames from '../GameNames';
-import { WerewolfProvider } from '../Context/index';
+import { WerewolfContext, WerewolfProvider } from '../Context/index';
 import './App.css';
+import React from 'react';
+
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -14,6 +16,9 @@ const AppRoutes = () => {
 }
 
 function App() {
+
+
+
   return (
     <WerewolfProvider>
       <HashRouter> 

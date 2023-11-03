@@ -53,7 +53,13 @@ export const WerewolfProvider = ({children}) => {
 
     //GameNames
 
-  
+    const [deadCard,setDeadCard] = useState(false)
+    const clickForDeath = (index) => {
+      setDeadCard(!deadCard)
+
+    }
+
+    const [loading,setLoading] = useState('hola')
 
     return (
         <WerewolfContext.Provider value={{
@@ -81,7 +87,11 @@ export const WerewolfProvider = ({children}) => {
           eliminatedImgW,
           cardPointInfoW,
           setCardPointInfoW,
-          
+          deadCard,
+          setDeadCard,
+          clickForDeath,
+          loading,
+          setLoading,
 
     
         }}>

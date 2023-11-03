@@ -21,7 +21,7 @@ main{
     width: 95%;
     height: 95%;
     background-color: rgb(0, 0, 0);
-
+   
     
 }
 .gameNamesHeader{
@@ -65,6 +65,8 @@ main{
     margin-bottom: 20px;
     margin-left: 10px;
 }
+.cardPlayerInput::placeholder{color: black ;}
+
 .gameNamesFooter{
     height: 50px;
     width: 100%;
@@ -72,4 +74,22 @@ main{
     background-image: url('./imgs/bottomPaper.png');
     background-size: cover;
     background-repeat: no-repeat;
+
+    
+}
+
+.blackAndWhiteFilter{
+    transition: 0.6s;
+    filter: grayscale(1);
+}
+
+@media screen and (min-width: 1440px) {
+    main{overflow-x: hidden;}
+    .gameNamesFooter,.cardPlayerCont,.gameNamesHeader{
+        max-width: 50%;
+        margin-left: 25%;
+
+    }
+    .cardPlayerName,.cardPlayerInput{margin-top: 20%; font-size: 2rem;}
+    .cardPlayerImg{ margin-top: 10%;}
 }

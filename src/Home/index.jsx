@@ -4,13 +4,12 @@ import React, { useContext } from 'react'
 import VillageCards from './VillageCards/index'
 import WerewolfsCards from './WerewolfsCards/index';
 import { Link } from 'react-router-dom';
-
+import LoadingScreen from '../LoadingScreen/index'
 
 function Home() {
   let villagersArray = []
   let werewolfsArray = []
   const context = useContext(WerewolfContext)
-
   if (context.playersCount>=6 && context.playersCount <= 8){
     villagersArray = Array.from({ length: context.playersCount -1  });
     werewolfsArray = Array.from({ length: 1 });
@@ -27,11 +26,12 @@ function Home() {
     villagersArray = Array.from({ length: context.playersCount -4  });
     werewolfsArray = Array.from({ length: 4});
   }
-
-
-    return (
-     
+  
+  
+  return (
+    
     <main className='hola'>
+      {context.loading && <LoadingScreen/>}
         <div className='principalInterface '>
 
             <h1 className='MainTittle text-red-700 text-5xl absolute top-1 under '>Ultimate Werewolf</h1>
