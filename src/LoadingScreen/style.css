@@ -105,7 +105,8 @@
 @media screen and (min-width: 1440px) {
 
     .loadingImg{
-        height: 100vh;
+        height: 90vh;
+        width: 50vw;
         box-shadow: 5px 10px 30px 50px;
         border-radius: 60px;
     }
